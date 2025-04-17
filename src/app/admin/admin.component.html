@@ -1,0 +1,116 @@
+<h2 class="text-2xl font-bold mb-4">Quản lý sản phẩm</h2>
+
+<form
+  (ngSubmit)="onSubmit()"
+  class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6"
+>
+  <input
+    [(ngModel)]="form.ten_sp"
+    name="ten_sp"
+    placeholder="Tên sản phẩm"
+    class="border p-2 rounded"
+    required
+  />
+  <input
+    [(ngModel)]="form.gia"
+    name="gia"
+    placeholder="Giá"
+    class="border p-2 rounded"
+    required
+  />
+  <input
+    [(ngModel)]="form.gia_km"
+    name="gia_km"
+    placeholder="giá khuyến mãi"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.hinh"
+    name="hinh"
+    placeholder="Link hình"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.ngay"
+    name="ngay"
+    placeholder="Ngày (YYYY-MM-DD)"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.id_loai"
+    name="id_loai"
+    placeholder="Mã loại"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.hot"
+    name="hot"
+    placeholder="Hot"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.an_hien"
+    name="an_hien"
+    placeholder="1"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.tinh_chat"
+    name="tinh_chat"
+    placeholder="Tính chất"
+    class="border p-2 rounded"
+  />
+  <input
+    [(ngModel)]="form.luot_xem"
+    name="luot_xem"
+    placeholder="Lượt Xem"
+    class="border p-2 rounded"
+  />
+
+  <button
+    type="submit"
+    class="col-span-2 bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+  >
+    {{ form.id ? "Cập nhật" : "Thêm mới" }}
+  </button>
+</form>
+
+<table class="w-full border">
+  <thead>
+    <tr class="bg-gray-200">
+      <th class="border p-2">ID</th>
+      <th class="border p-2">Tên</th>
+      <th class="border p-2">Giá</th>
+      <th class="border p-2">Hình</th>
+      <th class="border p-2">Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sp of products" class="text-center">
+      <td class="border p-2">{{ sp.id }}</td>
+      <td class="border p-2">{{ sp.ten_sp }}</td>
+      <td class="border p-2">{{ sp.gia }}</td>
+      <td class="border p-2">
+        <img
+          [src]="sp.hinh"
+          alt="hinh"
+          class="w-12 h-12 object-cover mx-auto"
+        />
+      </td>
+      <td class="border p-2 space-x-2">
+        <button
+          (click)="editProduct(sp)"
+          class="bg-yellow-400 px-3 py-1 rounded"
+        >
+          Sửa
+        </button>
+        <button
+          (click)="deleteProduct(sp.id)"
+          class="bg-red-500 text-white px-3 py-1 rounded"
+        >
+          Xoá
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

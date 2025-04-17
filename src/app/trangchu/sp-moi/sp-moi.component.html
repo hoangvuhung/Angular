@@ -1,0 +1,15 @@
+<h2 class="bg-emerald-50 p-2 my-2 text-[1.2em] uppercase">Sản phẩm mới</h2>
+<div class="grid grid-cols-3 gap-4">
+  <div
+    *ngFor="let sp of sp_arr"
+    class="text-center border border-black p-[10px]"
+  >
+    <h3 class="m-2 text-[1.1em] h-[60px]">
+      <a href="/sp/{{ sp.id }}"> {{ sp.ten_sp }} </a>
+    </h3>
+    <img src="{{ sp.hinh }}" class="w- [100%] h-[200px]" />
+    <p class="py-2">Giá: {{ sp.gia_km }}</p>
+    <p class="py-2">Cập nhật: {{ sp.ngay }}</p>
+    <p class="py-2">Lượt xem: {{ sp.luot_xem }}</p>
+  </div>
+</div>

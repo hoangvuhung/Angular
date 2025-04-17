@@ -1,0 +1,18 @@
+<div class="max-w-5xl mx-auto text-base font-sans">
+  <header
+    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-20 flex items-center justify-between px-6 shadow-lg text-white rounded-b-xl"
+  >
+    <app-header></app-header>
+  </header>
+
+  <nav class="bg-gray-900 h-14 flex items-center justify-center shadow-md mt-3 rounded-lg">
+    <ul class="flex gap-6 text-white text-lg"><app-thanhmenu/></ul>
+  </nav>
+  <main class="min-h-[300px] bg-gray-100 p-6 mt-4 rounded-xl shadow-inner">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-4 mt-6 rounded-t-xl">
+    <p class="text-lg">© 2025 - Hoang Vu Hung</p>
+  </footer>
+</div>

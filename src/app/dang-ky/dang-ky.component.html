@@ -1,0 +1,47 @@
+<form class="w-[75%] m-auto border-1 rounded">
+  <h2 class="bg-emerald-500 p-2 font-bold text-center text-white">
+    Đăng ký thành viên
+  </h2>
+  <div class="m-3">
+    Họ tên:
+    <input
+      type="text"
+      class="w-full border p-1"
+      [(ngModel)]="user.ho_ten"
+      name="ho_ten"
+    />
+  </div>
+  <div class="m-3">
+    Email:
+    <input
+      type="email"
+      class="w-full border p-1"
+      [(ngModel)]="user.email"
+      name="email"
+    />
+  </div>
+  <div class="m-3">
+    Mật khẩu:
+    <input
+      type="password"
+      class="w-full border p-1"
+      [(ngModel)]="user.mat_khau"
+      name="mat_khau2"
+    />
+  </div>
+  <div class="m-3">
+    Nhập lại mật khẩu:
+    <input
+      type="password"
+      class="w-full border p-1"
+      [(ngModel)]="user.go_lai_mat_khau"
+      name="mat_khau2"
+    />
+  </div>
+  <div class="m-3">
+    <button class="bg-emerald-400 px-4 py-2" type="button" (click)="dangky()">
+      Đăng ký
+    </button>
+    <b class="text-red-500 italic ml-4">{{ thong_bao }}</b>
+  </div>
+</form>

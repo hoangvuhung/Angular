@@ -1,0 +1,24 @@
+<div id="spdetail" class="flex">
+  <div class="w-[40%]">
+    <img src="{{ sp.hinh }}" class="w-[100%] h-[300px]" />
+  </div>
+  <div class="w-[60%] p-2">
+    <h3 class="m-2 text-[1.2em]">{{ sp.ten_sp }}</h3>
+    <p class="py-2">Giá gốc : {{ sp.gia }} VNĐ</p>
+    <p class="py-2">
+      Khuyến mãi:
+      {{ sp.gia_km }}
+      VNĐ
+    </p>
+    <p class="py-2">Ngày: {{ sp.ngay }}</p>
+    <p class="py-2">Xem: {{ sp.luot_xem }}</p>
+    <p class="py-2">Tính chất: {{ sp.tinh_chat }}</p>
+    <button
+      type="button"
+      (click)="this.cartService.themVaoGio(sp)"
+      class="text-white bg-green-700 rounded-1g px-5 py-1"
+    >
+      Thêm vào giỏ
+    </button>
+  </div>
+</div>
